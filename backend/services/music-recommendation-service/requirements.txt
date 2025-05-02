@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+httpx
+kafka-python
+pandas
+scikit-learn
+joblib
+python-dotenv

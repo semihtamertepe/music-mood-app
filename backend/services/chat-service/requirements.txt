@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+paho-mqtt
+kafka-python
+python-dotenv
+aiomqtt

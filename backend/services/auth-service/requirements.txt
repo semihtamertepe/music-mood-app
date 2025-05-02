@@ -1,0 +1,9 @@
+# services/auth-service/requirements.txt
+
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+passlib[bcrypt]
+PyJWT
+python-multipart

@@ -1,0 +1,21 @@
+INFO:     Started server process [14112]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "C:\Users\Monster\Desktop\music-mood-app\backend\env\Lib\site-packages\starlette\routing.py", line 540, in lifespan
+    async for item in self.lifespan_context(app):
+  File "C:\Users\Monster\Desktop\music-mood-app\backend\env\Lib\site-packages\starlette\routing.py", line 481, in default_lifespan
+    await self.startup()
+  File "C:\Users\Monster\Desktop\music-mood-app\backend\env\Lib\site-packages\starlette\routing.py", line 516, in startup
+    await handler()
+  File "C:\Users\Monster\Desktop\music-mood-app\backend\services\chat-service\main.py", line 11, in startup_event
+    await mqtt_client.connect()
+  File "C:\Users\Monster\Desktop\music-mood-app\backend\services\chat-service\services\mqtt_client.py", line 30, in connect
+    await stack.enter_async_context(client)
+  File "C:\Users\Monster\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 638, in enter_async_context
+    result = await _enter(cm)
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Monster\Desktop\music-mood-app\backend\env\Lib\site-packages\aiomqtt\client.py", line 726, in __aenter__
+    raise MqttError(str(exc)) from None
+aiomqtt.exceptions.MqttError: [Errno 11001] getaddrinfo failed
+
+ERROR:    Application startup failed. Exiting.

@@ -1,0 +1,49 @@
+INFO:     Started server process [26860]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "C:\Users\Monster\AppData\Local\Programs\Python\Python311\Lib\encodings\idna.py", line 179, in encode
+    result.extend(ToASCII(label))
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\Monster\AppData\Local\Programs\Python\Python311\Lib\encodings\idna.py", line 101, in ToASCII
+    raise UnicodeError("label empty or too long")
+UnicodeError: label empty or too long
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\as\backend\env\Lib\site-packages\starlette\routing.py", line 540, in lifespan
+    async for item in self.lifespan_context(app):
+  File "D:\as\backend\env\Lib\site-packages\starlette\routing.py", line 481, in default_lifespan
+    await self.startup()
+  File "D:\as\backend\env\Lib\site-packages\starlette\routing.py", line 516, in startup
+    await handler()
+  File "D:\as\backend\services\clickhouse-service\main.py", line 14, in startup_event
+    db.create_database_and_tables()
+  File "D:\as\backend\services\clickhouse-service\internal\database\clickhouse.py", line 14, in create_database_and_tables
+    self.client.execute('CREATE DATABASE IF NOT EXISTS chat_service')
+  File "D:\as\backend\env\Lib\site-packages\clickhouse_driver\client.py", line 345, in execute
+    with self.disconnect_on_error(query, settings):
+  File "C:\Users\Monster\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "D:\as\backend\env\Lib\site-packages\clickhouse_driver\client.py", line 289, in disconnect_on_error
+    self.establish_connection(settings)
+  File "D:\as\backend\env\Lib\site-packages\clickhouse_driver\client.py", line 276, in establish_connection
+    self.connection.force_connect()
+  File "D:\as\backend\env\Lib\site-packages\clickhouse_driver\connection.py", line 235, in force_connect
+    self.connect()
+  File "D:\as\backend\env\Lib\site-packages\clickhouse_driver\connection.py", line 342, in connect
+    return self._init_connection(host, port)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\as\backend\env\Lib\site-packages\clickhouse_driver\connection.py", line 306, in _init_connection
+    self.socket = self._create_socket(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\as\backend\env\Lib\site-packages\clickhouse_driver\connection.py", line 257, in _create_socket
+    for res in socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Monster\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeError: encoding with 'idna' codec failed (UnicodeError: label empty or too long)
+
+ERROR:    Application startup failed. Exiting.
