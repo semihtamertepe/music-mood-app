@@ -49,11 +49,6 @@ docker-compose up --build
 
 > Note: Ensure model files and environment variables are loaded before start.
 
----
-
-## 👨‍💻 Developer Note
-
-This project was built to demonstrate the harmony of real-time data pipelines, multilingual NLP, and microservice communication. It's designed with a senior backend architecture mindset in mind.
 
 ---
 
